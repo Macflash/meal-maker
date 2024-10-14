@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  OrgainVanillaProtein,
-  OrgainPerfectMealChocolate,
-  NakedPB,
-  Eatable,
-  POWDERS,
-} from "./eatable";
+import { Eatable, POWDERS } from "./eatable";
 
 export function Pantry({ onAdd }: { onAdd?: (added: Eatable) => void }) {
   return (

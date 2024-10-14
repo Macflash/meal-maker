@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  OrgainVanillaProtein,
-  NakedPB,
-  PortionEatable,
-  FrozenBlueberries,
-  OrgainPerfectMealChocolate,
-  Eatable,
-} from "./eatable";
+import { PortionEatable, Eatable } from "./eatable";
 import { SumNutrients, DivideNutrients, Nutrient } from "./nutrients";
 import { DAILY_TARGET, NutritionFacts } from "./nutrition";
 import { Pantry } from "./pantry";
@@ -14,13 +7,7 @@ import { NutrientPercent, Time } from "./time";
 import { Portion } from "./portion";
 
 export function DailyJournal() {
-  const powders = [OrgainVanillaProtein, NakedPB];
-  const [foodEaten, setFoodEaten] = React.useState<Eatable[]>([
-    { ...OrgainPerfectMealChocolate, quantity: 2 },
-    // { ...OrgainVanillaProtein, quantity: 2 },
-    // { ...NakedPB, quantity: 1 },
-    // { ...FrozenBlueberries, quantity: 1 },
-  ]);
+  const [foodEaten, setFoodEaten] = React.useState<Eatable[]>([]);
 
   const summed = SumNutrients(foodEaten.map(PortionEatable));
   const percents = DivideNutrients(summed, DAILY_TARGET);
