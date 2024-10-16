@@ -1,5 +1,6 @@
 import React from "react";
-import { Eatable, POWDERS } from "./eatable";
+import { Eatable } from "./eatable";
+import { POWDERS } from "./eatables/powders";
 
 export function Pantry({ onAdd }: { onAdd?: (added: Eatable) => void }) {
   return (
