@@ -60,11 +60,11 @@ function DailyPercents({ percents }: { percents: Nutrients }) {
   return (
     <div>
       <Time />
-      <NutrientPercent nutrient={Nutrient.calories} percents={percents} />
+      {/* <NutrientPercent nutrient={Nutrient.calories} percents={percents} />
       <NutrientPercent nutrient={Nutrient.saturated} percents={percents} />
       <NutrientPercent nutrient={Nutrient.fiber} percents={percents} />
       <NutrientPercent nutrient={Nutrient.sugar} percents={percents} />
-      <NutrientPercent nutrient={Nutrient.protein} percents={percents} />
+      <NutrientPercent nutrient={Nutrient.protein} percents={percents} /> */}
     </div>
   );
 }

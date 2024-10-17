@@ -14,6 +14,7 @@ export const FREEZER: ReadonlyArray<Eatable> = [
     serving: {
       name: "cup(s)",
       grams: 140,
+      increment: 0.25,
     },
     quantity: 0.25,
   },

@@ -120,7 +120,27 @@ function NutritionRow({
 
   const percentage = percents?.[nutrient];
   return (
-    <div style={{ display: "flex", borderTop: "1px solid black", padding: 3 }}>
+    <div
+      style={{
+        display: "flex",
+        borderTop: "1px solid black",
+        padding: 3,
+        position: "relative",
+      }}
+    >
+      {percentage ? (
+        <div
+          style={{
+            zIndex: -1,
+            top: 0,
+            left: 0,
+            bottom: 0,
+            position: "absolute",
+            width: `${percentage * 100}%`,
+            backgroundColor: "lightgrey",
+          }}
+        ></div>
+      ) : null}
       <div
         style={{
           fontWeight: indent ? undefined : 700,

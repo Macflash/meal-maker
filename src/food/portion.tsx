@@ -19,6 +19,7 @@ export function Portion({
       <div style={{ marginRight: 5 }}>{name}</div>
       <input
         min={0}
+        step={serving?.increment}
         style={{ width: 50, margin: "0 5px", marginLeft: "auto" }}
         type="number"
         value={quantity}

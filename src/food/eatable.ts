@@ -1,5 +1,13 @@
 import { Nutrients, ScaleNutrients } from "./nutrients";
 
+export enum Meals {
+  breakfast = "breakfast",
+  lunch = "lunch",
+  dinner = "dinner",
+  dessert = "dessert",
+  snack = "snack",
+}
+
 export interface Eatable {
   name: string;
   brand?: string;
@@ -9,7 +17,11 @@ export interface Eatable {
   serving?: {
     name: string; // e.g. scoop or count, etc.
     grams: number; // in grams
+    increment?: number; // Used for how big a step should be?
   };
+
+  // Optional tags for grouping foods in the pantry, or suggesting good foods to help balance your day.
+  tags?: ReadonlySet<Meals>;
 }
 
 export function PortionEatable(eatable: Eatable): Nutrients {
@@ -25,20 +37,3 @@ export function PortionEatable(eatable: Eatable): Nutrients {
 
   return ScaleNutrients(nutrients, scale);
 }
-
-export const FrozenBlueberries: Eatable = {
-  name: "Frozen Blueberries",
-  nutrients: {
-    grams: 140,
-    calories: 70,
-    fat: 1,
-    carbs: 17,
-    fiber: 4,
-    sugar: 12,
-  },
-  serving: {
-    name: "cup(s)",
-    grams: 140,
-  },
-  quantity: 0.25,
-};
